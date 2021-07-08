@@ -50,8 +50,10 @@ jobs:
     - name: Set current date as env variable
       run: |
         echo "PACKAGE7ZFILE=${{ github.run_id }}.7z" >> $GITHUB_ENV
+    - name: list dir 
+      run: ls assemblies/client/target/ -al
     - name: Package 
-      run: 7z a ${{ env.PACKAGE7ZFILE }} assemblies/client/target/pdi-ce-*-SNAPSHOT.zip
+      run: 7z a ${{ env.PACKAGE7ZFILE }} assemblies/client/target/
     - name: Create Release
       id: create-release
       uses: actions/create-release@v1
