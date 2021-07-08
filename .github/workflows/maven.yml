@@ -15,7 +15,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: Release.txt
+          files: /etc/*release
           tag_name: ${{ env.MY_DATE }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
